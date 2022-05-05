@@ -1,0 +1,18 @@
+syntax = "proto3";
+option go_package = "client_side_streaming/proto";
+
+package proto;
+
+service PortService {
+    rpc Create(stream CreateRequest) returns (CreateResponse) {}
+}
+ 
+message CreateRequest {
+    string id = 1;
+    string name = 2;
+}
+ 
+message CreateResponse {
+    int32 total = 1;
+}
+ 
